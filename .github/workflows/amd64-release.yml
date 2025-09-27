@@ -41,8 +41,7 @@ jobs:
           tag_name: DockerTarBuilder-AMD64
           name: ${{ env.RELEASE_NAME }} for x86-64
           body: |
-            ### How to use? For example:
-            下载所需的 `.tar.gz` 离线包到本地后，按需通过 `docker load -i file.tar.gz` 命令导入到 Docker。
+            下载所需的 `.tar.gz` 镜像包到本地后，通过 `docker load -i <文件名>.tar.gz` 命令导入到 Docker。
           draft: false
           prerelease: false
         env:
