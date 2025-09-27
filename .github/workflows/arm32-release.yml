@@ -32,7 +32,7 @@ jobs:
         run: |
           echo "Preparing docker images list (.tar.gz) files:"
           find $GITHUB_WORKSPACE -name "*.tar.gz"
-          release_name=$(TZ="Asia/Shanghai" date +'%Y-%m-%d %H:%M Build')
+          release_name=Build
           echo "RELEASE_NAME=$release_name" >> $GITHUB_ENV
 
       - name: Create GitHub Release
@@ -41,8 +41,7 @@ jobs:
           tag_name: DockerTarBuilder-ARM32
           name: ${{ env.RELEASE_NAME }} for ARM32
           body: |
-            ### How to use? For example
-            `docker load -i alpine_latest.tar.gz `
+            下载所需的 `.tar.gz` 镜像包到本地后，通过 `docker load -i <文件名>.tar.gz` 命令导入到 Docker。
           draft: false
           prerelease: false
         env:
