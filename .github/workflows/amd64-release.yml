@@ -41,12 +41,8 @@ jobs:
           tag_name: DockerTarBuilder-AMD64
           name: ${{ env.RELEASE_NAME }} for x86-64
           body: |
-            ### How to use
-            下载所需的 `.tar.gz` 离线包到本地后，按需导入到 Docker。
-            ####导入示例
-            ```bash
-            docker load -i alpine_latest-amd64.tar.gz
-            ```
+            ### How to use? For example:
+            下载所需的 `.tar.gz` 离线包到本地后，按需通过 `docker load -i file.tar.gz` 命令导入到 Docker。
           draft: false
           prerelease: false
         env:
